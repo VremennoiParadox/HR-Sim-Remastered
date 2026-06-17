@@ -1,0 +1,3 @@
+#!/bin/sh
+# Strip Co-authored-by trailers added by tooling.
+sed -i '' '/^Co-authored-by: Cursor /d' "$1" 2>/dev/null || sed -i '/^Co-authored-by: Cursor /d' "$1"
