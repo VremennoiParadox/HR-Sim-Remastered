@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #111B2E;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #243352;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #38BDF8;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #243352 #111B2E;
+  }
+}
+
+@layer components {
+  .stat-bar-fill {
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-panel {
+    @apply bg-navy-800/80 backdrop-blur-sm border border-navy-500/40 rounded-xl;
+  }
+
+  .card-hover {
+    @apply transition-all duration-200 hover:scale-[1.02] hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-400/10;
+  }
+
+  .btn-action {
+    @apply px-4 py-2.5 rounded-lg font-medium text-sm transition-all duration-150
+           bg-navy-700 border border-navy-500/60 text-gray-200
+           hover:bg-navy-600 hover:border-cyan-400/40 hover:text-white
+           active:scale-[0.97]
+           disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100
+           disabled:hover:bg-navy-700 disabled:hover:border-navy-500/60;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-xl font-semibold text-base transition-all duration-200
+           bg-gradient-to-r from-cyan-500 to-cyan-400 text-navy-950
+           hover:from-cyan-400 hover:to-cyan-300 hover:shadow-lg hover:shadow-cyan-400/30
+           active:scale-[0.97]
+           disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100;
+  }
+}
